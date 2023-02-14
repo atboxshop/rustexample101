@@ -14,6 +14,6 @@ fn main() -> !
 
     loop {
         led.toggle();
-        arduino_hal::delay_ms(500);
+        arduino_hal::delay_ms(200);
     }
 }
