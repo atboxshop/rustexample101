@@ -5,7 +5,7 @@ use panic_halt as _;
 
 #[arduino_hal::entry]
 
-fn main() -> ! 
+fn main() -> !
 {
     let dp = arduino_hal::Peripherals::take().unwrap();
 
@@ -15,6 +15,6 @@ fn main() -> !
 
     loop {
         led.toggle();
-        arduino_hal::delay_ms(200);
+        arduino_hal::delay_ms(2000);
     }
 }
