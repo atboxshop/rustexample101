@@ -12,13 +12,14 @@ fn main()->!
     let dp = arduino_hal::Peripherals::take().unwrap();
     
     let pins = arduino_hal::pins!(dp);
-
-    //Serial begin
+    
     let mut serial = arduino_hal::default_serial!(dp, pins, 115200);
-    //Serial print
-    ufmt::uwriteln!(&mut serial, "Hello From Arduino\r").void_unwrap();
-    loop 
-    {
-      
+    
+    let mut led = pins.d13.into_output();
+
+    loop {
+        led.toggle();
+        arduino_hal::delay_ms(100);
+        ufmt::uwriteln!(&mut serial, "Hello From Arduino\r").void_unwrap();
     }
 }
