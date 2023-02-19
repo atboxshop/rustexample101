@@ -19,6 +19,8 @@ fn main()->!
     ufmt::uwriteln!(&mut serial, "Hello From Arduino\r").void_unwrap();
     loop 
     {
-      
+      //Serial print
+      ufmt::uwriteln!(&mut serial, "Hello From Arduino\r").void_unwrap();
+      arduino_hal::delay_ms(500);
     }
 }
