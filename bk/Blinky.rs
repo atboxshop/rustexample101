@@ -4,8 +4,6 @@
 use arduino_hal::prelude::*;
 use panic_halt as _;
 
-
-
 #[arduino_hal::entry]
 fn main()->!
 {
