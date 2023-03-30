@@ -18,9 +18,9 @@ fn main()->!
 
     loop {
         led.set_high();
-        delay_ms(200);
+        delay_ms(100);
         ufmt::uwriteln!(&mut serial, "Hello From Arduino\r").void_unwrap();
         led.set_low();
-        delay_ms(200);
+        delay_ms(100);
     }
 }
